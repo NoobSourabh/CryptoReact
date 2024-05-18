@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import AnchorTemporaryDrawer from "./drawer";
+import Button from "../Button";
 
 function Header() {
   return (
@@ -19,8 +20,8 @@ function Header() {
         <a href="/">
           <p className="link">Watchlist</p>
         </a>
-        <a href="/">
-          <p className="link">Dashboard</p>
+        <a href="#">
+          <Button outlined={true} text={"Dashboard"} onClick={()=>console.log('btn clicked')} />
         </a>
       </div>
       <div className="mobile-drawer">
