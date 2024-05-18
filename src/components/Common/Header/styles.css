@@ -38,10 +38,21 @@
     display:none;
 }
 @media only screen and (max-width:800px){
+    .logo{
+        font-size: 1rem;
+    }
     .links{
     display:none;   
     }
     .mobile-drawer{
         display:block;
     }
+   
+}
+
+.drawer-div{
+    width:40vw;
+    height: 100vh;
+    background-color: var(--black);
+    padding: 1.5rem;
 }

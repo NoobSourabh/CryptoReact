@@ -9,10 +9,23 @@ export default function AnchorTemporaryDrawer() {
   return (
     <div>
       <IconButton onClick={() => setOpen(true)}>
-        <MenuRoundedIcon />
+        <MenuRoundedIcon className="link" />
       </IconButton>
       <Drawer anchor={"right"} open={open} onClose={() => setOpen(false)}>
-        <h1>hi</h1>
+        <div className="drawer-div">
+          <a href="/">
+            <p className="link">Home</p>
+          </a>
+          <a href="/">
+            <p className="link">Compare</p>
+          </a>
+          <a href="/">
+            <p className="link">Watchlist</p>
+          </a>
+          <a href="/">
+            <p className="link">Dashboard</p>
+          </a>
+        </div>
       </Drawer>
     </div>
   );
