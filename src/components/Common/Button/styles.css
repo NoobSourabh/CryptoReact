@@ -25,6 +25,7 @@ transition: all 0.3s;
     font-weight: 600;
     cursor: pointer;
     min-width: 100px;
+    text-align: center;
     text-transform: capitalize;
 }
 
