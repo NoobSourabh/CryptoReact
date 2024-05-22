@@ -1,0 +1,7 @@
+.tabs{
+  color: var(--white);
+    width: 50vw;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
