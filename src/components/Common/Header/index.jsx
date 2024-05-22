@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import AnchorTemporaryDrawer from "./drawer";
 import Button from "../Button";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -11,18 +12,22 @@ function Header() {
       </h1>
 
       <div className="links">
-        <a href="/">
+        <Link to="/">
           <p className="link">Home</p>
-        </a>
-        <a href="/">
+        </Link>
+        <Link to="/compare">
           <p className="link">Compare</p>
-        </a>
-        <a href="/">
+        </Link>
+        <Link to="/watchlist">
           <p className="link">Watchlist</p>
-        </a>
-        <a href="#">
-          <Button outlined={false} text={"Dashboard"} onClick={()=>console.log('btn clicked')} />
-        </a>
+        </Link>
+        <Link to="/dashboard">
+          <Button
+            outlined={false}
+            text={"Dashboard"}
+            onClick={() => console.log("btn clicked")}
+          />
+        </Link>
       </div>
       <div className="mobile-drawer">
         <AnchorTemporaryDrawer />
