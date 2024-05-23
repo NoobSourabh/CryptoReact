@@ -12,6 +12,8 @@ import {
   textTransform,
   width,
 } from "@mui/system";
+import Grid from "../Grid";
+
 export default function TabsComponent({ coins }) {
   const [value, setValue] = useState("grid");
 
@@ -43,16 +45,9 @@ export default function TabsComponent({ coins }) {
           <Tab label="List" value="list" sx={style} />
         </TabList>
         <TabPanel value="grid">
-          <div>
-            {coins.map((item, i) => {
-              return (
-                <div key={i}>
-                  <img src={item.image} />
-                  <p>
-                    {i + 1}.{item.name}
-                  </p>
-                </div>
-              );
+          <div className="grid-flex">
+            {coins.map((coin, i) => {
+              return <Grid coin={coin} key={i} />;
             })}
           </div>
         </TabPanel>

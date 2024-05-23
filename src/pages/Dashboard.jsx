@@ -11,8 +11,8 @@ function DashboardPage() {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100"
       )
       .then((response) => {
-        // console.log("Response", response);
-        setCoins(response.data)
+        console.log("Response", response);
+        setCoins(response.data);
       })
       .catch((error) => {
         console.log("error", error);
@@ -22,7 +22,7 @@ function DashboardPage() {
   return (
     <div>
       <Header />
-      <TabsComponent coins={ coins} />
+      <TabsComponent coins={coins} />
     </div>
   );
 }
