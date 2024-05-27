@@ -63,6 +63,7 @@
     font-weight: 400;
     color: var(--green);
     font-size: 1rem;
+    min-width: 60px;
 
 }
 .chip-red{
@@ -87,7 +88,7 @@
 }
 
 .icon-chip{
-        border: 2px solid var(--green);
+    border: 2px solid var(--green);
     border-radius:50%;
     height: 2rem;
     width: 2rem;
@@ -106,12 +107,19 @@
     align-items: center;
     color: var(--red);
 }
-
-
+.icon-chip:hover{
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+.red-icon-chip:hover{
+    background-color: var(--red);
+    color: var(--white);
+    transition: all 0.3s;
+}
 .info-container{
     margin: 1.5rem;
 }
-
 .coin-price{
     color: var(--green);
     font-size: 1.2rem;
