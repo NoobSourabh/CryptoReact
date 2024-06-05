@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import DashboardPage from "./pages/Dashboard";
+import CoinPage from "./pages/Coin";
 
 // import Footer from "./components/Common/Footer";
 
@@ -13,8 +14,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           {/*  <Route path="/compare" element={<ComparePage />} />
-        <Route path="/coin/:id" element ={<CoinPage/>}/>  
         <Route path="/watchlist" element={<WatchListPage />} /> */}
+        <Route path="/coin/:id" element ={<CoinPage/>}/>  
         </Routes>
       </BrowserRouter>
     </div>

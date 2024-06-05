@@ -9,6 +9,7 @@
     --green:#61c96f;
     --red:#f94141;
 }
+html{scroll-behavior: smooth;}
 
 body{
     margin:0;
@@ -48,3 +49,13 @@ a{
     color:var(--white) !important;
     text-decoration: none !important    ;
 }
+
+.grey-wrapper{
+  display: block;
+  width: 90%;
+  background-color: var(--darkgrey);
+  margin: 1.5rem auto;
+  padding: 0rem 1rem;
+  border-radius: 0.8rem;
+}
+
