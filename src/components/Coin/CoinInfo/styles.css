@@ -1,9 +1,11 @@
 .coin-info-heading {
+    padding-top: 1rem;
   font-size: 1.2rem;
   margin: 0;
 }
 .coin-info-desc{
     margin: 1rem;
+    padding-bottom:1rem ;
 }
 
 .coin-info-desc a {

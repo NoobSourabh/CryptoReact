@@ -15,19 +15,32 @@ function CoinPage() {
   const [days, setDays] = useState(30);
   useEffect(() => {
     if (id) {
-      getData();
+      axios
+        .get(`https://api.coingecko.com/api/v3/coins/${id}`)
+        .then((response) => {
+          console.log("data", response.data);
+          coinObject(setCoinData, response.data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          console.log("Error", error);
+        });
+
+      axios
+        .get(
+          `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+        )
+        .then((response) => {
+          console.log("Prices ", response.data.prices);
+        })
+        .catch((error) => {
+          console.log("error", error);
+          setIsLoading(false);
+        });
     }
   }, [id]);
-  async function getData() {
-    const data = await getCoinData(id);
-    if (data) {
-      coinObject(setCoinData, data);
-      const prices = await getCoinPrices(id, days);
-      if (prices) {
-        console.log("prices fetched");
-      }
-    }
-  }
+
   return (
     <div>
       <Header />(

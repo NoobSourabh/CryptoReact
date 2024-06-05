@@ -1,8 +1,9 @@
 import axios from "axios";
-export const getCoinData = (coinId) => {
+export const getCoinData = (id) => {
   const myData = axios
-    .get(`https://api.coingecko.com/api/v3/coins/${coinId}`)
+    .get(`https://api.coingecko.com/api/v3/coins/${id}`)
     .then((response) => {
+      console.log("data",response.data);
       return response.data;
     })
     .catch((error) => {
