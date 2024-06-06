@@ -8,11 +8,16 @@ import List from "../components/Dashboard/List";
 import CoinInfo from "../components/Coin/CoinInfo";
 import { getCoinData } from "../functions/getCoinData";
 import { getCoinPrices } from "../functions/getCoinPrices";
+import SelectDays from "../components/Coin/SelectDays";
+import { settingChartData } from "../functions/settingChartData";
+import LineChart from "../components/Coin/LineChart";
 function CoinPage() {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [coinData, setCoinData] = useState();
   const [days, setDays] = useState(30);
+  const [chartData, setChartData] = useState({});
+
   useEffect(() => {
     if (id) {
       getData();
@@ -25,9 +30,22 @@ function CoinPage() {
       const prices = await getCoinPrices(id, days);
       if (prices) {
         console.log("prices fetched");
+        settingChartData(setChartData, prices);
+        setIsLoading(false);
       }
     }
   }
+  const handleDaysChange = async (event) => {
+    setIsLoading(true);
+    setDays(event.target.value);
+    const prices = await getCoinPrices(id, days);
+    if (prices) {
+      console.log("prices fetched");
+      settingChartData(setChartData, prices);
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div>
       <Header />(
@@ -38,6 +56,11 @@ function CoinPage() {
           <div className="grey-wrapper">
             <List coin={coinData} />
           </div>
+          <div className="grey-wrapper">
+            <SelectDays days={days} handleDaysChange={handleDaysChange} />
+            <LineChart chartData={chartData} />
+          </div>
+
           <CoinInfo heading={coinData.name} desc={coinData.desc} />
         </>
       )}
