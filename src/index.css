@@ -59,3 +59,11 @@ a{
   border-radius: 0.8rem;
 }
 
+
+.coins-days-flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* justify-items: center; */
+  gap: 2rem;
+}

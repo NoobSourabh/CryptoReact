@@ -6,7 +6,7 @@ export const getCoinPrices = (id, days, priceType) => {
       `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
     )
     .then((response) => {
-      console.log("Prices ", response.data.prices);
+      console.log("Prices- getCoinPrices ", response.data[priceType]);
       return response.data[priceType];
     })
     .catch((error) => {
